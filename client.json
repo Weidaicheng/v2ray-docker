@@ -1,0 +1,43 @@
+{
+    "log": {
+        "loglevel": "info"
+    },
+    "inbounds": [
+        {
+            "port": 8080,
+            "protocol": "http",
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "tag": "proxy-vmess",
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "SERVER_ADDR",
+                        "port": SERVER_PORT,
+                        "users": [
+                            {
+                                "id": "CLIENT_UUID",
+                                "alterId": ALTER_ID
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "tag": "direct",
+            "settings": {},
+            "protocol": "freedom"
+        }
+    ]
+}
