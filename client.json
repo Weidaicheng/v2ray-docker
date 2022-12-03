@@ -4,7 +4,21 @@
     },
     "inbounds": [
         {
-            "port": 80,
+            "port": 1080,
+            "protocol": "socks",
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            },
+            "settings": {
+                "udp": true
+            }
+        },
+        {
+            "port": 8080,
             "protocol": "http",
             "sniffing": {
                 "enabled": true,
