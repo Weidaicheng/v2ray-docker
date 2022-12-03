@@ -12,16 +12,6 @@
                     "http",
                     "tls"
                 ]
-            },
-            "settings": {
-                "accounts": [
-                    {
-                        "user": "USER",
-                        "pass": "PASS"
-                    }
-                ],
-                "allowTransparent": false,
-                "userLevel": 0
             }
         }
     ],
